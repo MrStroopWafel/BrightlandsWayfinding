@@ -4,38 +4,36 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Maak een nieuwe stap aan</h1>
 
-<h4>Stap</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="StappenBeschrijving" class="control-label"></label>
+                <label asp-for="StappenBeschrijving" class="control-label">Beschrijving stap</label>
                 <input asp-for="StappenBeschrijving" class="form-control" />
                 <span asp-validation-for="StappenBeschrijving" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="lokaalId" class="control-label"></label>
+                <label asp-for="lokaalId" class="control-label">Lokaal ID</label>
                 <input asp-for="lokaalId" class="form-control" />
                 <span asp-validation-for="lokaalId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="stappenConnectieId" class="control-label"></label>
+                <label asp-for="stappenConnectieId" class="control-label">Stappen Connectie ID</label>
                 <input asp-for="stappenConnectieId" class="form-control" />
                 <span asp-validation-for="stappenConnectieId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Maak" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Terug naar het overzicht</a>
 </div>
 
 @section Scripts {

@@ -11,5 +11,6 @@ namespace BrightlandsCasus.Models
         public List<Stap> VolgendeStap { get; set; }
         public List<Stap> Afstand { get; set; }
         public List<Stap> RouteUitleg { get; set; }
+        //public virtual ICollection<Stap> Stappen { get; set; }
     }
 }

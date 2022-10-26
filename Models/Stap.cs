@@ -11,5 +11,6 @@ namespace BrightlandsCasus.Models
         public string StappenBeschrijving { get; set; }
         public int? lokaalId { get; set; }
         public int? stappenConnectieId { get; set; }
+        //public StapConnecties StapConnecties { get; set; }
     }
 }

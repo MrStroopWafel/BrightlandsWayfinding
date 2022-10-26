@@ -20,8 +20,20 @@ namespace BrightlandsCasus.Controllers
         }
 
         // GET: Stap
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(/*int? stappenConnectieId*/)
         {
+            //if (stappenConnectieId != null)
+            //{
+            //    var appDbContext = _context.Stappen
+            //        .Include(v => v.StapConnecties)
+            //        .Where(o => o.stappenConnectieId == stappenConnectieId);
+            //    return View(appDbContext.ToListAsync());
+            //}
+            //else
+            //{
+            //    var appDbContext = _context.Stappen.Include(o =>o.StapConnecties);
+            //    return View(await appDbContext.ToListAsync());
+            //}
               return View(await _context.Stappen.ToListAsync());
         }
 
