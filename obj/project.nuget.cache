@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CLS6ne8xZH4PdkbTHsIC4qt2oPJW5/aBhxreVEDx7aKCAdBjwfoBwrbFmys8ElrR8J4dBqLRfNJ40EkWg1uA0g==",
+  "dgSpecHash": "4fwFcjv7Z64hCTNQzwY0SJs+jehqXtWoVXf0WWoiX+ZBgqoJ4V0UEfMXysL5nvk6RAuoSN1RbOZF0klNFlczSg==",
   "success": true,
-  "projectFilePath": "D:\\zuyd\\c#\\lj2\\BrightlandsCasus\\BrightlandsCasus.csproj",
+  "projectFilePath": "C:\\Users\\lars\\Source\\Repos\\BrightlandsWayfinding\\BrightlandsCasus.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lars\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\lars\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.10\\microsoft.aspnetcore.cryptography.internal.6.0.10.nupkg.sha512",

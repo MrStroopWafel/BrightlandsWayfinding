@@ -2461,11 +2461,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\zuyd\\c#\\lj2\\BrightlandsCasus\\BrightlandsCasus.csproj",
+      "projectUniqueName": "C:\\Users\\lars\\Source\\Repos\\BrightlandsWayfinding\\BrightlandsCasus.csproj",
       "projectName": "BrightlandsCasus",
-      "projectPath": "D:\\zuyd\\c#\\lj2\\BrightlandsCasus\\BrightlandsCasus.csproj",
+      "projectPath": "C:\\Users\\lars\\Source\\Repos\\BrightlandsWayfinding\\BrightlandsCasus.csproj",
       "packagesPath": "C:\\Users\\lars\\.nuget\\packages\\",
-      "outputPath": "D:\\zuyd\\c#\\lj2\\BrightlandsCasus\\obj\\",
+      "outputPath": "C:\\Users\\lars\\Source\\Repos\\BrightlandsWayfinding\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
