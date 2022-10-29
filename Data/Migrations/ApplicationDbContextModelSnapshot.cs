@@ -40,6 +40,94 @@ namespace BrightlandsCasus.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Stap");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            StappenBeschrijving = "Ingang"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            StappenBeschrijving = "Trap begaande grond"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            StappenBeschrijving = "WC"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            StappenBeschrijving = "Administratie"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            StappenBeschrijving = "Eerste verdieping lift"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            LokaalId = 1,
+                            StappenBeschrijving = "Lokaal 1"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            StappenBeschrijving = "Zithal"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            StappenBeschrijving = "1e verdieping"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            StappenBeschrijving = "1e verdieping gang links"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            StappenBeschrijving = "1e verdieping gang rechts"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            StappenBeschrijving = "1e verdieping gang rechtdoor"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            LokaalId = 2,
+                            StappenBeschrijving = "Lokaal 2"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            LokaalId = 3,
+                            StappenBeschrijving = "Lokaal 3"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            LokaalId = 4,
+                            StappenBeschrijving = "Lokaal 4"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            LokaalId = 5,
+                            StappenBeschrijving = "Lokaal 5"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            LokaalId = 6,
+                            StappenBeschrijving = "Lokaal 6"
+                        });
                 });
 
             modelBuilder.Entity("BrightlandsCasus.Models.StapConnectie", b =>
@@ -68,6 +156,120 @@ namespace BrightlandsCasus.Data.Migrations
                     b.HasIndex("VanId");
 
                     b.ToTable("StapConnectie");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Afstand = 2,
+                            NaarId = 2,
+                            RouteUitelg = "Loop links naar de trap",
+                            VanId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Afstand = 3,
+                            NaarId = 3,
+                            RouteUitelg = "Loop rechts naar de wc",
+                            VanId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Afstand = 2,
+                            NaarId = 4,
+                            RouteUitelg = "Loop rechtdoor naar de administratie",
+                            VanId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Afstand = 5,
+                            NaarId = 5,
+                            RouteUitelg = "Loop links naar de traplift",
+                            VanId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Afstand = 1,
+                            NaarId = 7,
+                            RouteUitelg = "Loop rechtdoor naar de zithal",
+                            VanId = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Afstand = 12,
+                            NaarId = 8,
+                            RouteUitelg = "loop de trap op",
+                            VanId = 2
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Afstand = 6,
+                            NaarId = 9,
+                            RouteUitelg = "Loop links de gang op",
+                            VanId = 8
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Afstand = 3,
+                            NaarId = 10,
+                            RouteUitelg = "Loop rechts de gang op",
+                            VanId = 8
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Afstand = 6,
+                            NaarId = 11,
+                            RouteUitelg = "Loop rechtdoor de gang op",
+                            VanId = 8
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Afstand = 8,
+                            NaarId = 12,
+                            RouteUitelg = "Open de deur van lokaal 2",
+                            VanId = 9
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Afstand = 9,
+                            NaarId = 13,
+                            RouteUitelg = "Open de deur van lokaal 3",
+                            VanId = 9
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Afstand = 2,
+                            NaarId = 14,
+                            RouteUitelg = "Open de deur van lokaal 4",
+                            VanId = 10
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Afstand = 4,
+                            NaarId = 15,
+                            RouteUitelg = "Open de deur van lokaal 5",
+                            VanId = 10
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Afstand = 5,
+                            NaarId = 16,
+                            RouteUitelg = "Open de deur van lokaal 6",
+                            VanId = 11
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
