@@ -63,12 +63,9 @@ namespace BrightlandsCasus.Data.Migrations
                     b.Property<int>("VanId")
                         .HasColumnType("int");
 
-                    b.Property<int>("VanStapId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("VanStapId");
+                    b.HasIndex("VanId");
 
                     b.ToTable("StapConnectie");
                 });
@@ -279,7 +276,7 @@ namespace BrightlandsCasus.Data.Migrations
                 {
                     b.HasOne("BrightlandsCasus.Models.Stap", "VanStap")
                         .WithMany("StapConnecties")
-                        .HasForeignKey("VanStapId")
+                        .HasForeignKey("VanId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
