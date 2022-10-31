@@ -1,0 +1,34 @@
+﻿@model BrightlandsCasus.Models.Lokaal 
+
+<link rel="stylesheet" href="~/css/BedLokaalOverzicht.css" />
+
+<table class="table table-dark table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>LokaalNummer</th>
+            <th>Verdieping</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            foreach (LokaalBedrijf lokaalbedrijf in ViewBag.lokalen)
+            {
+                <tr>
+                    <td>
+                        @lokaalbedrijf.lokaal.Id
+                    </td>
+                    <td>
+                        @lokaalbedrijf.LokaalNummer
+                    </td>
+                    <td>
+                        @lokaalbedrijf.lokaal.VerdiepingId
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<button class="button-80" role="button" onclick="location.href='@Url.Action("LokalenToevoegen", "LokaalBedrijf")'">Lokaal Toevoegen</button>

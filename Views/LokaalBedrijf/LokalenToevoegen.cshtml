@@ -1,0 +1,19 @@
+﻿@model BrightlandsCasus.Models.LokaalBedrijf
+
+<div class="card">
+    <div class="card-header">
+        <h5>Lokalen Toevoegen</h5>
+    </div>
+
+    <form asp-action="LokaalBedrijfPost" method="post">
+        <div class="card-body">
+            <div class="input-group mb-3">
+                <select class="form-select" id="inputGroupSelect02" asp-for="LokaalNummer" 
+                asp-items="@(new SelectList(ViewBag.lokalen, "Value", "Text"))"></select>
+            </div> 
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary" type="submit">Toevoegen</button>
+        </div>
+    </form>
+</div>

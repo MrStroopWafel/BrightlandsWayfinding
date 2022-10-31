@@ -1,0 +1,48 @@
+﻿@model BrightlandsCasus.Models.Bedrijf
+
+<link rel="stylesheet" href="~/css/BedrijfIndex.css" />
+
+<table class="table table-dark table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Naam</th>
+            <th>Lokalen</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            foreach(Bedrijf bedrijf in ViewBag.bedrijven)
+            {
+                <tr>
+                    <td>
+                        @bedrijf.Id 
+                    </td>
+                    <td>
+                        @bedrijf.Naam
+                    </td>
+                    <td>
+                        <form asp-action="Lokalen" asp-route-id="@bedrijf.Id">
+                            <button type="submit" class="btn btn-success">Lokalen</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form asp-action="Edit" asp-route-id="@bedrijf.Id">
+                            <button type="submit" class="btn btn-warning">Edit</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form asp-action="Delete" asp-route-id="@bedrijf.Id">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<button class="button-80" role="button" onclick="location.href='@Url.Action("Create", "Bedrijf")'">Bedrijf Toevoegen</button>

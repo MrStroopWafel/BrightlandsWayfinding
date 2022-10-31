@@ -1,0 +1,22 @@
+﻿@model BrightlandsCasus.Models.Bedrijf
+
+<div class="card">
+    <div class="card-header">
+        <h5>Bedrijf Bewerken</h5>
+    </div>
+
+    <form asp-action="BedrijfEdit" method="post">
+        <div class="card-body">
+            <br />
+            <div class="row">
+                <div class="col form-group">
+                    <input asp-for="Naam" placeholder="Bedrijfsnaam" class="form-control" />
+                </div>
+            </div>
+            <br />
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary" type="submit">Opslaan</button>
+        </div>
+    </form>
+</div>
