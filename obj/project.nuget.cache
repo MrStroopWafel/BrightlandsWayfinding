@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1ozz7hS0t2+/pGLw/3OVu1akbpSh0EfzQMjWhOvvtyh4/6Vp1FRQMmoawlnEVueewuMbmx5iBvCd76FT/iKyOQ==",
+  "dgSpecHash": "J19CiSD+cq+nOoEm9J7ySwkLPuW49hqQoCxkztrbzbBskzNg98IvS5TV3G8G8l+yVO0S+OX01/ArNzAQvg6Yzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Niema\\Source\\Repos\\BrightlandsWayfinding\\BrightlandsCasus.csproj",
+  "projectFilePath": "C:\\Users\\Niema\\source\\repos\\BrightlandsWayfinding\\BrightlandsCasus.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Niema\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Niema\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

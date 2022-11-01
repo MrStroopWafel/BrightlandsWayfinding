@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Niema\\Source\\Repos\\BrightlandsWayfinding\\BrightlandsCasus.csproj": {}
+    "C:\\Users\\Niema\\source\\repos\\BrightlandsWayfinding\\BrightlandsCasus.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Niema\\Source\\Repos\\BrightlandsWayfinding\\BrightlandsCasus.csproj": {
+    "C:\\Users\\Niema\\source\\repos\\BrightlandsWayfinding\\BrightlandsCasus.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Niema\\Source\\Repos\\BrightlandsWayfinding\\BrightlandsCasus.csproj",
+        "projectUniqueName": "C:\\Users\\Niema\\source\\repos\\BrightlandsWayfinding\\BrightlandsCasus.csproj",
         "projectName": "BrightlandsCasus",
-        "projectPath": "C:\\Users\\Niema\\Source\\Repos\\BrightlandsWayfinding\\BrightlandsCasus.csproj",
+        "projectPath": "C:\\Users\\Niema\\source\\repos\\BrightlandsWayfinding\\BrightlandsCasus.csproj",
         "packagesPath": "C:\\Users\\Niema\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Niema\\Source\\Repos\\BrightlandsWayfinding\\obj\\",
+        "outputPath": "C:\\Users\\Niema\\source\\repos\\BrightlandsWayfinding\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Niema\\AppData\\Roaming\\NuGet\\NuGet.Config",

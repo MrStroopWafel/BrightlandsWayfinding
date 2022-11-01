@@ -8,85 +8,89 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BrightlandsCasus
 build_property.RootNamespace = BrightlandsCasus
-build_property.ProjectDir = C:\Users\Niema\Source\Repos\BrightlandsWayfinding\
+build_property.ProjectDir = C:\Users\Niema\source\repos\BrightlandsWayfinding\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Niema\Source\Repos\BrightlandsWayfinding
+build_property.MSBuildProjectDirectory = C:\Users\Niema\source\repos\BrightlandsWayfinding
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/Home/Index.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/Home/Privacy.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/Shared/Error.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/StapConnecties/Create.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/StapConnecties/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcENvbm5lY3RpZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/StapConnecties/Delete.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/StapConnecties/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcENvbm5lY3RpZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/StapConnecties/Details.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/StapConnecties/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcENvbm5lY3RpZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/StapConnecties/Edit.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/StapConnecties/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcENvbm5lY3RpZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/StapConnecties/Index.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/StapConnecties/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcENvbm5lY3RpZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/Stap/Create.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/StappenConnecties/Connect.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcHBlbkNvbm5lY3RpZXNcQ29ubmVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/Stap/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/Stap/Delete.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/Stap/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/Stap/Details.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/Stap/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/Stap/Edit.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/Stap/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/Stap/Index.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/Stap/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/_ViewImports.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/_ViewStart.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Niema/Source/Repos/BrightlandsWayfinding/Views/Shared/_Layout.cshtml]
+[C:/Users/Niema/source/repos/BrightlandsWayfinding/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-i4q7ymgqr4
