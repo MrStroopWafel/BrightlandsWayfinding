@@ -1,0 +1,48 @@
+﻿@model BrightlandsCasus.Models.StapConnectie
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>StapConnectie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="VanId" class="control-label"></label>
+                <input asp-for="VanId" class="form-control" />
+                <span asp-validation-for="VanId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NaarId" class="control-label"></label>
+                <input asp-for="NaarId" class="form-control" />
+                <span asp-validation-for="NaarId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Afstand" class="control-label"></label>
+                <input asp-for="Afstand" class="form-control" />
+                <span asp-validation-for="Afstand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RouteUitelg" class="control-label"></label>
+                <input asp-for="RouteUitelg" class="form-control" />
+                <span asp-validation-for="RouteUitelg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
