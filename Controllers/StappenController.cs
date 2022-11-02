@@ -22,7 +22,7 @@ namespace BrightlandsCasus.Controllers
         // GET: Stappen
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Stap.ToListAsync());
+              return View(await _context.Stap.Include(s => s.StapConnecties).ToListAsync());
         }
 
         // GET: Stappen/Details/5

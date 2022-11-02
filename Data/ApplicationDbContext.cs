@@ -20,22 +20,15 @@ namespace BrightlandsCasus.Data
 
             //maakt van een fk en vult de list van de stap met alle stappen die dat van Id hebben
             builder.Entity<StapConnectie>()
-                .HasOne(c => c.VanStap)
+                .HasOne(c => c.StapFrom)
                 .WithMany(s => s.StapConnecties)
-                .HasForeignKey(c => c.VanId);
+                .OnDelete(DeleteBehavior.NoAction);
+            builder.Entity<StapConnectie>()
+                .HasOne(c => c.StapTo)
+                .WithMany(s => s.ConnectieEnds)
+                .OnDelete(DeleteBehavior.NoAction);
 
-            //testen voor de 2e connectie naar de NaarId en de NaarStap te vullen
-            //builder.Entity<StapConnectie>()
-            //    .HasOne(c => c.NaarStap)
-            //    .WithMany(s => s.ConnectieEndpoints)
-            //    .HasForeignKey(c => c.NaarId)
-            //    .OnDelete(DeleteBehavior.SetNull);
 
-            ////moet een fk zijn die geen shit in de lijst gooid
-            //builder.Entity<StapConnectie>()
-            //    .HasOne(c => c.NaarStap)
-            //    .WithOne(s => s.Id)
-            //    .HasForeignKey(c => c.VanId);
 
             //run de data seeds
             DataSeedStappen(builder);

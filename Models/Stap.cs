@@ -10,6 +10,6 @@ namespace BrightlandsCasus.Models
         public string StappenBeschrijving { get; set; }
         public int? LokaalId { get; set; }
         public virtual ICollection<StapConnectie> StapConnecties { get; set; }
-        //public virtual ICollection<StapConnectie> ConnectieEndpoints { get; set; }
+        public virtual ICollection<StapConnectie> ConnectieEnds { get; set; }
     }
 }
