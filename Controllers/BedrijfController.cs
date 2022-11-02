@@ -1,5 +1,6 @@
 ﻿using BrightlandsCasus.Data;
 using BrightlandsCasus.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -18,6 +19,7 @@ namespace BrightlandsCasus.Controllers
             appDb = _appDb;
         }
 
+        [Authorize]
         public IActionResult BedrijvenOverzicht()
         {
             var Bedrijven = appDb.Bedrijven.ToList();
@@ -25,11 +27,13 @@ namespace BrightlandsCasus.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Create()
         {
 
             return View();
         }
+
 
         public IActionResult Edit(int id)
         {
