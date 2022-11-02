@@ -9,7 +9,7 @@ namespace BrightlandsCasus.Models
         [Required]
         public string StappenBeschrijving { get; set; }
         public int? LokaalId { get; set; }
-        public virtual ICollection<StapConnectie> StapConnecties { get; set; }
+        public virtual ICollection<StapConnectie> ConnectieStartPoints { get; set; }
         public virtual ICollection<StapConnectie> ConnectieEnds { get; set; }
     }
 }

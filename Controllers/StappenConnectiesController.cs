@@ -54,7 +54,7 @@ namespace BrightlandsCasus.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,VanId,NaarId,Afstand,RouteUitelg")] StapConnectie stapConnectie)
+        public async Task<IActionResult> Create([Bind("Id,StapFromId,StapToId,Afstand,RouteUitelg")] StapConnectie stapConnectie)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace BrightlandsCasus.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,VanId,NaarId,Afstand,RouteUitelg")] StapConnectie stapConnectie)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,StapFromId,StapToId,Afstand,RouteUitelg")] StapConnectie stapConnectie)
         {
             if (id != stapConnectie.Id)
             {

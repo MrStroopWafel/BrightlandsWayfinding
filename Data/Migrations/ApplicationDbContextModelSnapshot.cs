@@ -141,20 +141,14 @@ namespace BrightlandsCasus.Data.Migrations
                     b.Property<int>("Afstand")
                         .HasColumnType("int");
 
-                    b.Property<int>("NaarId")
-                        .HasColumnType("int");
-
                     b.Property<string>("RouteUitelg")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("StapFromId")
+                    b.Property<int>("StapFromId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("StapToId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("VanId")
+                    b.Property<int>("StapToId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -170,113 +164,113 @@ namespace BrightlandsCasus.Data.Migrations
                         {
                             Id = 1,
                             Afstand = 2,
-                            NaarId = 2,
                             RouteUitelg = "Loop links naar de trap",
-                            VanId = 1
+                            StapFromId = 1,
+                            StapToId = 2
                         },
                         new
                         {
                             Id = 2,
                             Afstand = 3,
-                            NaarId = 3,
                             RouteUitelg = "Loop rechts naar de wc",
-                            VanId = 1
+                            StapFromId = 1,
+                            StapToId = 3
                         },
                         new
                         {
                             Id = 3,
                             Afstand = 2,
-                            NaarId = 4,
                             RouteUitelg = "Loop rechtdoor naar de administratie",
-                            VanId = 1
+                            StapFromId = 1,
+                            StapToId = 4
                         },
                         new
                         {
                             Id = 4,
                             Afstand = 5,
-                            NaarId = 5,
                             RouteUitelg = "Loop links naar de traplift",
-                            VanId = 1
+                            StapFromId = 1,
+                            StapToId = 5
                         },
                         new
                         {
                             Id = 5,
                             Afstand = 1,
-                            NaarId = 7,
                             RouteUitelg = "Loop rechtdoor naar de zithal",
-                            VanId = 1
+                            StapFromId = 1,
+                            StapToId = 7
                         },
                         new
                         {
                             Id = 6,
                             Afstand = 12,
-                            NaarId = 8,
                             RouteUitelg = "loop de trap op",
-                            VanId = 2
+                            StapFromId = 2,
+                            StapToId = 8
                         },
                         new
                         {
                             Id = 7,
                             Afstand = 6,
-                            NaarId = 9,
                             RouteUitelg = "Loop links de gang op",
-                            VanId = 8
+                            StapFromId = 8,
+                            StapToId = 9
                         },
                         new
                         {
                             Id = 8,
                             Afstand = 3,
-                            NaarId = 10,
                             RouteUitelg = "Loop rechts de gang op",
-                            VanId = 8
+                            StapFromId = 8,
+                            StapToId = 10
                         },
                         new
                         {
                             Id = 9,
                             Afstand = 6,
-                            NaarId = 11,
                             RouteUitelg = "Loop rechtdoor de gang op",
-                            VanId = 8
+                            StapFromId = 8,
+                            StapToId = 11
                         },
                         new
                         {
                             Id = 10,
                             Afstand = 8,
-                            NaarId = 12,
                             RouteUitelg = "Open de deur van lokaal 2",
-                            VanId = 9
+                            StapFromId = 9,
+                            StapToId = 12
                         },
                         new
                         {
                             Id = 11,
                             Afstand = 9,
-                            NaarId = 13,
                             RouteUitelg = "Open de deur van lokaal 3",
-                            VanId = 9
+                            StapFromId = 9,
+                            StapToId = 13
                         },
                         new
                         {
                             Id = 12,
                             Afstand = 2,
-                            NaarId = 14,
                             RouteUitelg = "Open de deur van lokaal 4",
-                            VanId = 10
+                            StapFromId = 10,
+                            StapToId = 14
                         },
                         new
                         {
                             Id = 13,
                             Afstand = 4,
-                            NaarId = 15,
                             RouteUitelg = "Open de deur van lokaal 5",
-                            VanId = 10
+                            StapFromId = 10,
+                            StapToId = 15
                         },
                         new
                         {
                             Id = 14,
                             Afstand = 5,
-                            NaarId = 16,
                             RouteUitelg = "Open de deur van lokaal 6",
-                            VanId = 11
+                            StapFromId = 11,
+                            StapToId = 16
                         });
                 });
 
@@ -485,14 +479,16 @@ namespace BrightlandsCasus.Data.Migrations
             modelBuilder.Entity("BrightlandsCasus.Models.StapConnectie", b =>
                 {
                     b.HasOne("BrightlandsCasus.Models.Stap", "StapFrom")
-                        .WithMany("StapConnecties")
+                        .WithMany("ConnectieStartPoints")
                         .HasForeignKey("StapFromId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.HasOne("BrightlandsCasus.Models.Stap", "StapTo")
                         .WithMany("ConnectieEnds")
                         .HasForeignKey("StapToId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.Navigation("StapFrom");
 
@@ -554,7 +550,7 @@ namespace BrightlandsCasus.Data.Migrations
                 {
                     b.Navigation("ConnectieEnds");
 
-                    b.Navigation("StapConnecties");
+                    b.Navigation("ConnectieStartPoints");
                 });
 #pragma warning restore 612, 618
         }

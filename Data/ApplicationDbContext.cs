@@ -21,7 +21,7 @@ namespace BrightlandsCasus.Data
             //maakt van een fk en vult de list van de stap met alle stappen die dat van Id hebben
             builder.Entity<StapConnectie>()
                 .HasOne(c => c.StapFrom)
-                .WithMany(s => s.StapConnecties)
+                .WithMany(s => s.ConnectieStartPoints)
                 .OnDelete(DeleteBehavior.NoAction);
             builder.Entity<StapConnectie>()
                 .HasOne(c => c.StapTo)
@@ -59,20 +59,20 @@ namespace BrightlandsCasus.Data
         protected void DataSeedStappenConnecties(ModelBuilder builder)
         {
             builder.Entity<StapConnectie>().HasData(
-                new StapConnectie { Id = 1, VanId = 1, NaarId = 2, Afstand = 2, RouteUitelg = "Loop links naar de trap" },
-                new StapConnectie { Id = 2, VanId = 1, NaarId = 3, Afstand = 3, RouteUitelg = "Loop rechts naar de wc" },
-                new StapConnectie { Id = 3, VanId = 1, NaarId = 4, Afstand = 2, RouteUitelg = "Loop rechtdoor naar de administratie" },
-                new StapConnectie { Id = 4, VanId = 1, NaarId = 5, Afstand = 5, RouteUitelg = "Loop links naar de traplift" },
-                new StapConnectie { Id = 5, VanId = 1, NaarId = 7, Afstand = 1, RouteUitelg = "Loop rechtdoor naar de zithal" },
-                new StapConnectie { Id = 6, VanId = 2, NaarId = 8, Afstand = 12, RouteUitelg = "loop de trap op" },
-                new StapConnectie { Id = 7, VanId = 8, NaarId = 9, Afstand = 6, RouteUitelg = "Loop links de gang op" },
-                new StapConnectie { Id = 8, VanId = 8, NaarId = 10, Afstand = 3, RouteUitelg = "Loop rechts de gang op" },
-                new StapConnectie { Id = 9, VanId = 8, NaarId = 11, Afstand = 6, RouteUitelg = "Loop rechtdoor de gang op" },
-                new StapConnectie { Id = 10, VanId = 9, NaarId = 12, Afstand = 8, RouteUitelg = "Open de deur van lokaal 2" },
-                new StapConnectie { Id = 11, VanId = 9, NaarId = 13, Afstand = 9, RouteUitelg = "Open de deur van lokaal 3" },
-                new StapConnectie { Id = 12, VanId = 10, NaarId = 14, Afstand = 2, RouteUitelg = "Open de deur van lokaal 4" },
-                new StapConnectie { Id = 13, VanId = 10, NaarId = 15, Afstand = 4, RouteUitelg = "Open de deur van lokaal 5" },
-                new StapConnectie { Id = 14, VanId = 11, NaarId = 16, Afstand = 5, RouteUitelg = "Open de deur van lokaal 6" }
+                new StapConnectie { Id = 1, StapFromId = 1, StapToId = 2, Afstand = 2, RouteUitelg = "Loop links naar de trap" },
+                new StapConnectie { Id = 2, StapFromId = 1, StapToId = 3, Afstand = 3, RouteUitelg = "Loop rechts naar de wc" },
+                new StapConnectie { Id = 3, StapFromId = 1, StapToId = 4, Afstand = 2, RouteUitelg = "Loop rechtdoor naar de administratie" },
+                new StapConnectie { Id = 4, StapFromId = 1, StapToId = 5, Afstand = 5, RouteUitelg = "Loop links naar de traplift" },
+                new StapConnectie { Id = 5, StapFromId = 1, StapToId = 7, Afstand = 1, RouteUitelg = "Loop rechtdoor naar de zithal" },
+                new StapConnectie { Id = 6, StapFromId = 2, StapToId = 8, Afstand = 12, RouteUitelg = "loop de trap op" },
+                new StapConnectie { Id = 7, StapFromId = 8, StapToId = 9, Afstand = 6, RouteUitelg = "Loop links de gang op" },
+                new StapConnectie { Id = 8, StapFromId = 8, StapToId = 10, Afstand = 3, RouteUitelg = "Loop rechts de gang op" },
+                new StapConnectie { Id = 9, StapFromId = 8, StapToId = 11, Afstand = 6, RouteUitelg = "Loop rechtdoor de gang op" },
+                new StapConnectie { Id = 10, StapFromId = 9, StapToId = 12, Afstand = 8, RouteUitelg = "Open de deur van lokaal 2" },
+                new StapConnectie { Id = 11, StapFromId = 9, StapToId = 13, Afstand = 9, RouteUitelg = "Open de deur van lokaal 3" },
+                new StapConnectie { Id = 12, StapFromId = 10, StapToId = 14, Afstand = 2, RouteUitelg = "Open de deur van lokaal 4" },
+                new StapConnectie { Id = 13, StapFromId = 10, StapToId = 15, Afstand = 4, RouteUitelg = "Open de deur van lokaal 5" },
+                new StapConnectie { Id = 14, StapFromId = 11, StapToId = 16, Afstand = 5, RouteUitelg = "Open de deur van lokaal 6" }
 
                 );
         }
