@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using BrightlandsCasus.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using BrightlandsCasus.Models;
 
@@ -12,6 +13,12 @@ namespace BrightlandsCasus.Data
         }
         public DbSet<BrightlandsCasus.Models.Stap> Stap { get; set; }
         public DbSet<BrightlandsCasus.Models.StapConnectie> StapConnectie { get; set; }
+
+        public DbSet<Lokaal> Lokalen { get; set; }
+        public DbSet<Verdieping> Verdiepingen { get; set; }
+        public DbSet<Bedrijf> Bedrijven { get; set; }
+
+        public DbSet<LokaalBedrijf> lokaalBedrijf { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -27,6 +34,26 @@ namespace BrightlandsCasus.Data
                 .HasOne(c => c.StapTo)
                 .WithMany(s => s.ConnectieEnds)
                 .OnDelete(DeleteBehavior.NoAction);
+            builder.Entity<LokaalBedrijf>()
+                .HasKey(x => new
+                {
+                    x.Id
+                });
+
+            builder.Entity<LokaalBedrijf>()
+                .HasOne(b => b.bedrijf)
+                .WithMany(l => l.Lokalen)
+                .HasForeignKey(x => x.BedijfId);
+
+            builder.Entity<LokaalBedrijf>()
+                .HasOne(l => l.lokaal)
+                .WithOne(b => b.bedrijf)
+                .HasForeignKey<LokaalBedrijf>(x => x.LokaalId);
+
+            builder.Entity<Lokaal>()
+                .HasOne(v => v.verdieping)
+                .WithMany(l => l.Lokalen)
+                .HasForeignKey(l => l.VerdiepingId);
 
 
 
@@ -76,5 +103,8 @@ namespace BrightlandsCasus.Data
 
                 );
         }
+
+
+        
     }
 }
