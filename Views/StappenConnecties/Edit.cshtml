@@ -15,12 +15,12 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="StapFromId" class="control-label"></label>
-                <input asp-for="StapFromId" class="form-control" />
+                <select asp-for="StapFromId" class="form-control" asp-items="ViewBag.StapFromId"></select>
                 <span asp-validation-for="StapFromId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="StapToId" class="control-label"></label>
-                <input asp-for="StapToId" class="form-control" />
+                <select asp-for="StapToId" class="form-control" asp-items="ViewBag.StapToId"></select>
                 <span asp-validation-for="StapToId" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -44,6 +44,3 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
