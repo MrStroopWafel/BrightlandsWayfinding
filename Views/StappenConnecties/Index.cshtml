@@ -13,10 +13,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.StapFromId)
+                @Html.DisplayNameFor(model => model.StapFrom)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StapToId)
+                @Html.DisplayNameFor(model => model.StapTo)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Afstand)
@@ -31,10 +31,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.StapFromId)
+                @Html.DisplayFor(modelItem => item.StapFrom.StappenBeschrijving)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.StapToId)
+                @Html.DisplayFor(modelItem => item.StapTo.StappenBeschrijving)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Afstand)

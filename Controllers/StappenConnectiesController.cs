@@ -22,7 +22,8 @@ namespace BrightlandsCasus.Controllers
         // GET: StappenConnecties
         public async Task<IActionResult> Index()
         {
-              return View(await _context.StapConnectie.ToListAsync());
+            var applicationDbContext = _context.StapConnectie.Include(s => s.StapFrom).Include(s => s.StapTo);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: StappenConnecties/Details/5
@@ -34,6 +35,8 @@ namespace BrightlandsCasus.Controllers
             }
 
             var stapConnectie = await _context.StapConnectie
+                .Include(s => s.StapFrom)
+                .Include(s => s.StapTo)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (stapConnectie == null)
             {
@@ -46,6 +49,8 @@ namespace BrightlandsCasus.Controllers
         // GET: StappenConnecties/Create
         public IActionResult Create()
         {
+            ViewData["StapFromId"] = new SelectList(_context.Stap, "Id", "StappenBeschrijving");
+            ViewData["StapToId"] = new SelectList(_context.Stap, "Id", "StappenBeschrijving");
             return View();
         }
 
@@ -62,6 +67,8 @@ namespace BrightlandsCasus.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["StapFromId"] = new SelectList(_context.Stap, "Id", "StappenBeschrijving", stapConnectie.StapFromId);
+            ViewData["StapToId"] = new SelectList(_context.Stap, "Id", "StappenBeschrijving", stapConnectie.StapToId);
             return View(stapConnectie);
         }
 
@@ -78,6 +85,8 @@ namespace BrightlandsCasus.Controllers
             {
                 return NotFound();
             }
+            ViewData["StapFromId"] = new SelectList(_context.Stap, "Id", "StappenBeschrijving", stapConnectie.StapFromId);
+            ViewData["StapToId"] = new SelectList(_context.Stap, "Id", "StappenBeschrijving", stapConnectie.StapToId);
             return View(stapConnectie);
         }
 
@@ -113,6 +122,8 @@ namespace BrightlandsCasus.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["StapFromId"] = new SelectList(_context.Stap, "Id", "StappenBeschrijving", stapConnectie.StapFromId);
+            ViewData["StapToId"] = new SelectList(_context.Stap, "Id", "StappenBeschrijving", stapConnectie.StapToId);
             return View(stapConnectie);
         }
 
@@ -125,6 +136,8 @@ namespace BrightlandsCasus.Controllers
             }
 
             var stapConnectie = await _context.StapConnectie
+                .Include(s => s.StapFrom)
+                .Include(s => s.StapTo)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (stapConnectie == null)
             {
