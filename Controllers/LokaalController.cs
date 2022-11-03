@@ -1,5 +1,7 @@
 ﻿using BrightlandsCasus.Data;
+using BrightlandsCasus.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace BrightlandsCasus.Controllers
 {
@@ -9,7 +11,47 @@ namespace BrightlandsCasus.Controllers
 
         public LokaalController(ApplicationDbContext _appDb)
         {
-            _appDb = appDb; 
+            appDb = _appDb; 
+        }
+        public IActionResult KiesVerdieping()
+        {
+            var verdieping = appDb.Verdiepingen.ToList();
+
+            ViewBag.verdiepingen = verdieping;
+            return View();
+        }
+
+        public IActionResult VerdiepingLokaal(int id)
+        {
+            Verdieping verdieping = appDb.Verdiepingen.Find(id); 
+
+            HttpContext.Session.SetString("VerdiepingSession", JsonConvert.SerializeObject(verdieping));
+
+
+            var lokaal = appDb.Lokalen
+                .Where(x => x.VerdiepingId == id)
+                .ToList();
+
+            ViewBag.lokalen = lokaal;
+
+            return View();
+        }
+
+        public IActionResult LokaalCreate()
+        {
+            return View(); 
+        }
+
+        public IActionResult LokaalPost(Lokaal lokaal)
+        {
+            Verdieping ver = JsonConvert.DeserializeObject<Verdieping>(HttpContext.Session.GetString("VerdiepingSession"));
+
+            lokaal.VerdiepingId = ver.Id;  
+
+            appDb.Lokalen
+                .Add(lokaal);
+            appDb.SaveChanges(); 
+            return RedirectToAction("VerdiepingLokaal","Lokaal", new {id = ver.Id});
         }
     }
 }

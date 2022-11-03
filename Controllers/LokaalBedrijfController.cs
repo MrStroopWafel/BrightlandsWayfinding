@@ -1,5 +1,6 @@
 ﻿using BrightlandsCasus.Data;
 using BrightlandsCasus.Models;
+using Humanizer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
@@ -9,6 +10,7 @@ namespace BrightlandsCasus.Controllers
 {
     public class LokaalBedrijfController : Controller
     {
+
         private readonly ApplicationDbContext appDb;
         public LokaalBedrijf lokaalBedrijf1;
         public LokaalBedrijfController(ApplicationDbContext _appDb)
@@ -17,7 +19,22 @@ namespace BrightlandsCasus.Controllers
         }
         public IActionResult LokalenToevoegen(int id)
         {
-            var Lokalen = (from Lokaal in appDb.Lokalen
+            List<Lokaal> FindLokaal = appDb.Lokalen.ToList(); 
+            
+            
+            //Lokalen die al aan een bedrijf gekoppeld zijn worden uit de lijst verwijderd. 
+            foreach (LokaalBedrijf lokaalBedrijf in appDb.lokaalBedrijf)
+            {
+                foreach (Lokaal lokaal in appDb.Lokalen)
+                {
+                    if (lokaal.Id == lokaalBedrijf.LokaalId)
+                    {
+                        FindLokaal.Remove(lokaal);
+                    }
+                }
+            }
+
+            var Lokalen = (from Lokaal in FindLokaal
                            select new SelectListItem()
                            {
                                Text = Lokaal.LokaalNummer,
@@ -31,6 +48,7 @@ namespace BrightlandsCasus.Controllers
 
 
             ViewBag.lokalen = Lokalen;
+
 
             return View();
         }
@@ -52,8 +70,6 @@ namespace BrightlandsCasus.Controllers
                     lokaalBedrijf.LokaalId = lokaal.Id;
                 }
             }
-
-
 
             appDb.lokaalBedrijf
                 .Add(lokaalBedrijf);

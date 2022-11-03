@@ -1,0 +1,30 @@
+﻿
+<link rel="stylesheet" href="~/css/BedLokaalOverzicht.css" />
+
+<table class="table table-dark table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Lokaalnummer</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            foreach (Lokaal lokaal in ViewBag.lokalen)
+            {
+                <tr>
+                    <td>
+                        @lokaal.Id
+                    </td>
+                    <td>
+                        @lokaal.LokaalNummer
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<button class="button-80" role="button" onclick="location.href='@Url.Action("KiesVerdieping", "Lokaal")'">Terug</button>
+<button class="button-80" role="button" onclick="location.href='@Url.Action("LokaalCreate", "Lokaal")'">Lokaal aanmaken</button>
