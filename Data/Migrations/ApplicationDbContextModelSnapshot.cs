@@ -274,6 +274,95 @@ namespace BrightlandsCasus.Data.Migrations
                         });
                 });
 
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("BrightlandsCasus.Models.Bedrijf", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Naam")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Bedrijven");
+                });
+
+            modelBuilder.Entity("BrightlandsCasus.Models.Lokaal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("LokaalBedrijfId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LokaalNummer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("VerdiepingId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VerdiepingId");
+
+                    b.ToTable("Lokalen");
+                });
+
+            modelBuilder.Entity("BrightlandsCasus.Models.LokaalBedrijf", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BedijfId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LokaalId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LokaalNummer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BedijfId");
+
+                    b.HasIndex("LokaalId")
+                        .IsUnique();
+
+                    b.ToTable("lokaalBedrijf");
+                });
+
+            modelBuilder.Entity("BrightlandsCasus.Models.Verdieping", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Beschrijving")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Verdiepingen");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -476,6 +565,37 @@ namespace BrightlandsCasus.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("BrightlandsCasus.Models.Lokaal", b =>
+                {
+                    b.HasOne("BrightlandsCasus.Models.Verdieping", "verdieping")
+                        .WithMany("Lokalen")
+                        .HasForeignKey("VerdiepingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("verdieping");
+                });
+
+            modelBuilder.Entity("BrightlandsCasus.Models.LokaalBedrijf", b =>
+                {
+                    b.HasOne("BrightlandsCasus.Models.Bedrijf", "bedrijf")
+                        .WithMany("Lokalen")
+                        .HasForeignKey("BedijfId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BrightlandsCasus.Models.Lokaal", "lokaal")
+                        .WithOne("bedrijf")
+                        .HasForeignKey("BrightlandsCasus.Models.LokaalBedrijf", "LokaalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("bedrijf");
+
+                    b.Navigation("lokaal");
+                    b.ToTable("AspNetUserTokens", (string)null);
+                });
+
             modelBuilder.Entity("BrightlandsCasus.Models.StapConnectie", b =>
                 {
                     b.HasOne("BrightlandsCasus.Models.Stap", "StapFrom")
@@ -544,6 +664,21 @@ namespace BrightlandsCasus.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("BrightlandsCasus.Models.Bedrijf", b =>
+                {
+                    b.Navigation("Lokalen");
+                });
+
+            modelBuilder.Entity("BrightlandsCasus.Models.Lokaal", b =>
+                {
+                    b.Navigation("bedrijf");
+                });
+
+            modelBuilder.Entity("BrightlandsCasus.Models.Verdieping", b =>
+                {
+                    b.Navigation("Lokalen");
                 });
 
             modelBuilder.Entity("BrightlandsCasus.Models.Stap", b =>
