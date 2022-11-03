@@ -22,6 +22,260 @@ namespace BrightlandsCasus.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("BrightlandsCasus.Models.Stap", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("LokaalId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("StappenBeschrijving")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Stap");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            StappenBeschrijving = "Ingang"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            StappenBeschrijving = "Trap begaande grond"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            StappenBeschrijving = "WC"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            StappenBeschrijving = "Administratie"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            StappenBeschrijving = "Eerste verdieping lift"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            LokaalId = 1,
+                            StappenBeschrijving = "Lokaal 1"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            StappenBeschrijving = "Zithal"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            StappenBeschrijving = "1e verdieping"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            StappenBeschrijving = "1e verdieping gang links"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            StappenBeschrijving = "1e verdieping gang rechts"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            StappenBeschrijving = "1e verdieping gang rechtdoor"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            LokaalId = 2,
+                            StappenBeschrijving = "Lokaal 2"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            LokaalId = 3,
+                            StappenBeschrijving = "Lokaal 3"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            LokaalId = 4,
+                            StappenBeschrijving = "Lokaal 4"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            LokaalId = 5,
+                            StappenBeschrijving = "Lokaal 5"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            LokaalId = 6,
+                            StappenBeschrijving = "Lokaal 6"
+                        });
+                });
+
+            modelBuilder.Entity("BrightlandsCasus.Models.StapConnectie", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("Afstand")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RouteUitelg")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StapFromId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StapToId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StapFromId");
+
+                    b.HasIndex("StapToId");
+
+                    b.ToTable("StapConnectie");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Afstand = 2,
+                            RouteUitelg = "Loop links naar de trap",
+                            StapFromId = 1,
+                            StapToId = 2
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Afstand = 3,
+                            RouteUitelg = "Loop rechts naar de wc",
+                            StapFromId = 1,
+                            StapToId = 3
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Afstand = 2,
+                            RouteUitelg = "Loop rechtdoor naar de administratie",
+                            StapFromId = 1,
+                            StapToId = 4
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Afstand = 5,
+                            RouteUitelg = "Loop links naar de traplift",
+                            StapFromId = 1,
+                            StapToId = 5
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Afstand = 1,
+                            RouteUitelg = "Loop rechtdoor naar de zithal",
+                            StapFromId = 1,
+                            StapToId = 7
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Afstand = 12,
+                            RouteUitelg = "loop de trap op",
+                            StapFromId = 2,
+                            StapToId = 8
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Afstand = 6,
+                            RouteUitelg = "Loop links de gang op",
+                            StapFromId = 8,
+                            StapToId = 9
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Afstand = 3,
+                            RouteUitelg = "Loop rechts de gang op",
+                            StapFromId = 8,
+                            StapToId = 10
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Afstand = 6,
+                            RouteUitelg = "Loop rechtdoor de gang op",
+                            StapFromId = 8,
+                            StapToId = 11
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Afstand = 8,
+                            RouteUitelg = "Open de deur van lokaal 2",
+                            StapFromId = 9,
+                            StapToId = 12
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Afstand = 9,
+                            RouteUitelg = "Open de deur van lokaal 3",
+                            StapFromId = 9,
+                            StapToId = 13
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Afstand = 2,
+                            RouteUitelg = "Open de deur van lokaal 4",
+                            StapFromId = 10,
+                            StapToId = 14
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Afstand = 4,
+                            RouteUitelg = "Open de deur van lokaal 5",
+                            StapFromId = 10,
+                            StapToId = 15
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Afstand = 5,
+                            RouteUitelg = "Open de deur van lokaal 6",
+                            StapFromId = 11,
+                            StapToId = 16
+                        });
+                });
+
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
             modelBuilder.Entity("BrightlandsCasus.Models.Bedrijf", b =>
                 {
                     b.Property<int>("Id")
@@ -339,6 +593,26 @@ namespace BrightlandsCasus.Data.Migrations
                     b.Navigation("bedrijf");
 
                     b.Navigation("lokaal");
+                    b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("BrightlandsCasus.Models.StapConnectie", b =>
+                {
+                    b.HasOne("BrightlandsCasus.Models.Stap", "StapFrom")
+                        .WithMany("ConnectieStartPoints")
+                        .HasForeignKey("StapFromId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("BrightlandsCasus.Models.Stap", "StapTo")
+                        .WithMany("ConnectieEnds")
+                        .HasForeignKey("StapToId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("StapFrom");
+
+                    b.Navigation("StapTo");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -405,6 +679,13 @@ namespace BrightlandsCasus.Data.Migrations
             modelBuilder.Entity("BrightlandsCasus.Models.Verdieping", b =>
                 {
                     b.Navigation("Lokalen");
+                });
+
+            modelBuilder.Entity("BrightlandsCasus.Models.Stap", b =>
+                {
+                    b.Navigation("ConnectieEnds");
+
+                    b.Navigation("ConnectieStartPoints");
                 });
 #pragma warning restore 612, 618
         }

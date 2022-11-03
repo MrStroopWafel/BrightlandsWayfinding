@@ -1,0 +1,50 @@
+﻿@model BrightlandsCasus.Models.StapConnectie
+@{
+    ViewData["Title"] = "Connect";
+}
+
+
+
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Verbind de stappen</h2>
+		</div>
+		<div>
+			<h5>
+				Beschrijving van de stappen:
+			</h5>
+		</div>
+		<div class="mb-3">
+			<select class="form-select" id="" asp-for="RouteUitelg"
+			asp-items="@(new SelectList(ViewBag.Connecteren, "Value", "Text"))"></select>
+			@*//asp-items="Viewbag.StapFromId"*@
+		</div>
+		<div class="mb-3">
+			<select class="form-select" id="" asp-for="RouteUitelg"
+			asp-items="@(new SelectList(ViewBag.Connecteren, "Value", "Text"))"></select>
+		</div>
+		<div class="mb-3">
+			<select class="form-select" id="" asp-for="RouteUitelg"
+			asp-items="@(new SelectList(ViewBag.Connecteren, "Value", "Text"))"></select>
+		</div>
+		<div class="mb-3">
+			<select class="form-select" id="" asp-for="RouteUitelg"
+			asp-items="@(new SelectList(ViewBag.Connecteren, "Value", "Text"))"></select>
+		</div>
+		<div class="mb-3">
+			<select class="form-select" id="" asp-for="RouteUitelg"
+					asp-items="@(new SelectList(ViewBag.Connecteren, "Value", "Text"))"></select>
+		</div>
+		<div class="mb-3">
+			<select class="form-select" id="" asp-for="RouteUitelg"
+					asp-items="@(new SelectList(ViewBag.Connecteren, "Value", "Text"))"></select>
+		</div>
+
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:200px">Connectie aanmaken</button>
+		<a asp-controller="StappenConnecties" asp-action="Index" class="btn btn-secondary" style="width200px">
+			Terug naar de index
+		</a>
+	</div>
+</form>
