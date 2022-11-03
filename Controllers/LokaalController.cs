@@ -1,5 +1,6 @@
 ﻿using BrightlandsCasus.Data;
 using BrightlandsCasus.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -13,6 +14,8 @@ namespace BrightlandsCasus.Controllers
         {
             appDb = _appDb; 
         }
+
+        [Authorize]
         public IActionResult KiesVerdieping()
         {
             var verdieping = appDb.Verdiepingen.ToList();
@@ -37,11 +40,13 @@ namespace BrightlandsCasus.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult LokaalCreate()
         {
             return View(); 
         }
 
+        [HttpPost]
         public IActionResult LokaalPost(Lokaal lokaal)
         {
             Verdieping ver = JsonConvert.DeserializeObject<Verdieping>(HttpContext.Session.GetString("VerdiepingSession"));
